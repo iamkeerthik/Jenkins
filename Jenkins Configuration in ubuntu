@@ -1,0 +1,39 @@
+Install and configure git
+ -> sudo apt-get install git -y
+ -> git config --global user.name kirik
+ -> git config --global user.email kirik@gamil.com
+ -> git config --global --list
+ 
+Install Java-jdk
+-> sudo apt-get install defualt-jre
+-> sudo apt-get install default-jdk
+
+Install maven
+-> sudo apt-get install maven
+-> mvn -version
+
+Install and configure Jenkins
+
+1. add the framework repository key: 
+
+-> wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add  
+
+2. Next, link the repository of Debian packages to the sources.list of the server: 
+
+-> sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' 
+
+-> sudo apt update 
+-> sudo apt-get install jenkins
+
+3. start jenkins service
+
+-> sudo systemctl start jenkins 
+-> sudo systemctl status jenkins
+
+Then open browser and browse
+http://localhost:8080/
+
+It will ask intial password,once jenkins page load, goto specified path and copy password and Enter
+-> sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Install recomemded plugins
